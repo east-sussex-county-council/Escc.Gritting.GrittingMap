@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="css\default.css" />
     <Content Include="Default.aspx" />
     <Content Include="js\default.js" />
     <Content Include="js\libs\markerwithlabel_packed.js" />
@@ -99,6 +100,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\min\" />
     <Folder Include="js\min\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -125,7 +127,8 @@
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)js\min\*.*" /Q
 if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)js/default.js" &gt; "$(ProjectDir)js/min/default.js"
 
-</PostBuildEvent>
+if "$(ConfigurationName)" == "Release" del "$(ProjectDir)css\min\*.*" /Q
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)css/default.css" &gt; "$(ProjectDir)css/min/default.css"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
