@@ -9,10 +9,14 @@
 		Description="Map showing the current location of gritters in East Sussex"
 		LgslNumbers="561"
 		/>
+    <style>
+        .google-map { width: 100%;height: 100%;}
+    </style>
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="fullScreenHeading">Where the gritters are</asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="fullScreenLinks"><p>Back to <a href="/roadsandtransport/roads/maintenance/saltingandgritting/default.htm">Gritting roads and pavements</a></p></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="afterForm">
+    <div class="google-map" id="google-map"></div>
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="supporting" />
