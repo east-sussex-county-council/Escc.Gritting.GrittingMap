@@ -12,5 +12,13 @@
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="fullScreenHeading">Where the gritters are</asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="fullScreenLinks"><p>Back to <a href="/roadsandtransport/roads/maintenance/saltingandgritting/default.htm">Gritting roads and pavements</a></p></asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="content">
+<asp:Content runat="server" ContentPlaceHolderID="afterForm">
 </asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="supporting" />
+
+<asp:content runat="server" contentplaceholderid="javascript">
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyANUn6ii_A0eVpHFR7wfoiyPnnkU6R9Ecg&sensor=true"></script>
+    <script src="js/libs/markerwithlabel_packed.js"></script>
+    <script src="js/default.js"></script>
+</asp:content>

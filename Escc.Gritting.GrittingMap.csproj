@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Default.aspx" />
+    <Content Include="js\default.js" />
+    <Content Include="js\libs\markerwithlabel_packed.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -69,6 +71,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="yuicompressor-2.4.6.jar" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -95,6 +98,9 @@
     <None Include="LICENSE.md" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="js\min\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
@@ -115,6 +121,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>if "$(ConfigurationName)" == "Release" del "$(ProjectDir)js\min\*.*" /Q
+if "$(ConfigurationName)" == "Release" java -jar "$(ProjectDir)yuicompressor-2.4.6.jar" "$(ProjectDir)js/default.js" &gt; "$(ProjectDir)js/min/default.js"
+
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
