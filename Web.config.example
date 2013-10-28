@@ -18,6 +18,11 @@
 
     <system.web>
         <compilation debug="true" targetFramework="4.0" />
-        <pages masterPageFile="~/masterpages/FullScreen.master" />
+        <pages masterPageFile="~/masterpages/FullScreen.master">
+            <controls>
+                <!-- Add controls which are declared at root of site, repeated here in dev only for Visual Studio intellisense-->
+                <add tagPrefix="Egms" namespace="EsccWebTeam.Egms" assembly="EsccWebTeam.Egms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06fad7304560ae6f"/>
+            </controls>
+        </pages>
     </system.web>
 </configuration>
