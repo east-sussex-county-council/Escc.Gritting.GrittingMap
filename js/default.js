@@ -1,13 +1,14 @@
 ﻿if (jQuery != 'undefined') {
 
-    $(function() {
+    $(function () {
         /// <summary>Application to display the location of gritters on a map. This function forms the namespace.</summary>
-         var map, centreOnPoint = new google.maps.LatLng(50.96674, 0.256443);
+        var map, centreOnPoint = new google.maps.LatLng(50.96674, 0.256443);
 
         function setupApplication() {
             /// <summary>Set up the application and load the initial data</summary>
             createMap();
             addSearchBox();
+            createExampleMarkers();
         }
 
         function createMap() {
@@ -65,6 +66,34 @@
                         }
                     }
                 );
+            });
+            }
+        
+        function createExampleMarkers() {
+            new MarkerWithLabel({
+                map: map,
+                position: new google.maps.LatLng(50.76675, 0.156443),
+                icon: "img/gritter.png",
+                labelClass: "marker-label",
+                labelContent: "Snowy Joey"
+            });
+
+            new MarkerWithLabel({
+                map: map,
+                position: new google.maps.LatLng(50.95674, 0.256442),
+                icon: "img/gritter.png",
+                labelClass: "marker-label",
+                labelContent: "Gritney Spears",
+                labelAnchor: new google.maps.Point(20, 0)
+            });
+
+            new MarkerWithLabel({
+                map: map,
+                position: new google.maps.LatLng(50.96674, 0.545443),
+                icon: "img/gritter.png",
+                labelClass: "marker-label",
+                labelContent: "Stony Tony",
+                labelAnchor: new google.maps.Point(20, 0)
             });
         }
 

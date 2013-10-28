@@ -1,0 +1,10 @@
+/* Ensure the Google map fills its container */
+.google-map { width: 100%;height: 100%;}
+
+/* Set search box font to 16px using up 54px (3 lines) of vertical space (54px = 36px line-height with 9px top and bottom margins) */
+.map-controls { line-height: 2.769231em; padding: .692308em;}
+.map-controls input { font-size: 1.230769em;}
+#google-location {padding: .125em; width: 400px; max-width: 70%; border-radius: 5px;}
+
+/* Label style for gritter markers */
+.marker-label { font: bold 1em Arial, "Helvetica Neue", Helvetica, sans-serif; padding: 2px 5px; border: 2px solid #999; border-radius: 5px; text-align: center; white-space: nowrap; background: #fff; color: red; margin: 2px 0 0 -35px!important; }
