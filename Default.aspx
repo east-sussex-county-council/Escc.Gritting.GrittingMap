@@ -26,7 +26,6 @@
 <asp:Content runat="server" ContentPlaceHolderID="supporting" />
 
 <asp:content runat="server" contentplaceholderid="javascript">
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyANUn6ii_A0eVpHFR7wfoiyPnnkU6R9Ecg&sensor=true"></script>
-    <script src="js/libs/markerwithlabel_packed.js"></script>
+    <Egms:Script runat="server" Files="GoogleMaps" Moveable="False"/>
     <script src="js/default.js"></script>
 </asp:content>

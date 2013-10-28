@@ -60,6 +60,7 @@
     <Content Include=".gitignore" />
     <Content Include="css\default.css" />
     <Content Include="Default.aspx" />
+    <Content Include="img\gritter.png" />
     <Content Include="js\default.js" />
     <Content Include="js\libs\markerwithlabel_packed.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
