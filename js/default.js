@@ -2,7 +2,7 @@
 
     var esccGrittingMap = function () {
         /// <summary>Application to display the location of gritters on a map. This function forms the namespace.</summary>
-        var map;
+        var map, markers = {};
 
         function setupApplication() {
             /// <summary>Set up the application and load the initial data</summary>
@@ -13,23 +13,28 @@
                 success: function () {
                     map = esccGoogleMaps.createMap();
                     esccGoogleMaps.addLocationSearch('google-location', 'google-search');
-                    createExampleMarkers();
+                    loadGritters();
                 }
             });
         }
 
-        function createExampleMarkers() {
+        function loadGritters() {
+            /// <summary>Loads gritter data and creates or updates markers</summary>
             $.getJSON("gritterdata.ashx", function (data, status) {
-                var gritters = data.length;
+               var gritters = data.length;
                 for (var i = 0; i < gritters; i++) {
-                    new MarkerWithLabel({
-                        map: map,
-                        position: new google.maps.LatLng(data[i].lat, data[i].long),
-                        icon: "img/gritter.png",
-                        labelClass: "marker-label",
-                        labelContent: data[i].name
-                    });
+                     if (markers[data[i].id] === undefined) {
+                        markers[data[i].id] = new MarkerWithLabel({
+                            map: map,
+                            icon: "img/gritter.png",
+                            labelClass: "marker-label",
+                            labelContent: data[i].name
+                        });
+                    }
+                    markers[data[i].id].setPosition(new google.maps.LatLng(data[i].lat, data[i].lng));
                 }
+
+                setTimeout(loadGritters, 5000);
             });
         }
 
