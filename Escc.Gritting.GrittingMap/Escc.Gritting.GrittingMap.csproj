@@ -59,7 +59,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
     <Content Include="css\default.css" />
     <Content Include="Default.aspx" />
     <Content Include="img\gritter.png" />
@@ -91,15 +90,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Inetpub\wwwroot\eastsussex.gov.uk.csproj">
+    <ProjectReference Include="..\..\..\Inetpub\wwwroot\eastsussex.gov.uk.csproj">
       <Project>{1426FEF0-23DC-4C23-AE15-67F2527BD741}</Project>
       <Name>eastsussex.gov.uk</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\VS Projects\_Standards\E-Government Metadata Standard %28E-GMS%29\EsccWebTeam.Egms\EsccWebTeam.Egms.csproj">
+    <ProjectReference Include="..\..\..\VS Projects\_Standards\E-Government Metadata Standard %28E-GMS%29\EsccWebTeam.Egms\EsccWebTeam.Egms.csproj">
       <Project>{78083DCB-B12F-4950-86C5-3A844D8604F3}</Project>
       <Name>EsccWebTeam.Egms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Escc.Gritting\Escc.Gritting.csproj">
+    <ProjectReference Include="..\..\Escc.Gritting\Escc.Gritting.csproj">
       <Project>{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}</Project>
       <Name>Escc.Gritting</Name>
     </ProjectReference>
@@ -107,8 +106,6 @@
   <ItemGroup>
     <Content Include="GritterData.ashx" />
     <None Include="Web.config.example" />
-    <None Include="LICENSE.md" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\min\" />
