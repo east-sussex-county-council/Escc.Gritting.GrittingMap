@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using Escc.Gritting.Fakes;
+using Escc.Gritting.SqlServer;
 
 namespace Escc.Gritting.GrittingMap
 {
@@ -14,7 +14,7 @@ namespace Escc.Gritting.GrittingMap
         /// <param name="context">An <see cref="T:System.Web.HttpContext"/> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
         public void ProcessRequest(HttpContext context)
         {
-            var repo = new FakeGritterRepository();
+            var repo = new SqlServerGritterRepository();
 
             WriteResponseAsJson(context, repo);
         }

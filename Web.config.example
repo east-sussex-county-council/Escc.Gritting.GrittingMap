@@ -7,6 +7,10 @@
         </sectionGroup>
     </configSections>
 
+    <connectionStrings>
+        <add name="GrittingReader" connectionString="connection string"/>
+    </connectionStrings>
+
     <EsccWebTeam.EastSussexGovUK>
         <DesktopMasterPages>
             <add key="/Escc.Gritting.GrittingMap" value="~/masterpages/FullScreen.master" />
