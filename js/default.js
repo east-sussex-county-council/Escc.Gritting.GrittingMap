@@ -1,4 +1,4 @@
-﻿if (jQuery != 'undefined' && esccGoogleMaps != 'undefined') {
+﻿if (jQuery !== 'undefined' && esccGoogleMaps !== 'undefined') {
 
     var esccGrittingMap = function () {
         /// <summary>Application to display the location of gritters on a map. This function forms the namespace.</summary>
@@ -10,39 +10,26 @@
                 url: "js/libs/markerwithlabel_packed.js",
                 dataType: "script",
                 cache: true,
-                success: function() {
+                success: function () {
                     map = esccGoogleMaps.createMap();
                     esccGoogleMaps.addLocationSearch('google-location', 'google-search');
-                    createExampleMarkers();              
+                    createExampleMarkers();
                 }
             });
         }
 
         function createExampleMarkers() {
-            new MarkerWithLabel({
-                map: map,
-                position: new google.maps.LatLng(50.76675, 0.156443),
-                icon: "img/gritter.png",
-                labelClass: "marker-label",
-                labelContent: "Snowy Joey"
-            });
-
-            new MarkerWithLabel({
-                map: map,
-                position: new google.maps.LatLng(50.95674, 0.256442),
-                icon: "img/gritter.png",
-                labelClass: "marker-label",
-                labelContent: "Gritney Spears",
-                labelAnchor: new google.maps.Point(20, 0)
-            });
-
-            new MarkerWithLabel({
-                map: map,
-                position: new google.maps.LatLng(50.96674, 0.545443),
-                icon: "img/gritter.png",
-                labelClass: "marker-label",
-                labelContent: "Stony Tony",
-                labelAnchor: new google.maps.Point(20, 0)
+            $.getJSON("gritterdata.ashx", function (data, status) {
+                var gritters = data.length;
+                for (var i = 0; i < gritters; i++) {
+                    new MarkerWithLabel({
+                        map: map,
+                        position: new google.maps.LatLng(data[i].lat, data[i].long),
+                        icon: "img/gritter.png",
+                        labelClass: "marker-label",
+                        labelContent: data[i].name
+                    });
+                }
             });
         }
 
