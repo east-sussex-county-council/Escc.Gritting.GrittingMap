@@ -1,6 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
+    <configSections>
+        <section name="Escc.Gritting.Fleetstar.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </configSections>
+    
     <connectionStrings>
         <add name="GrittingWriter" connectionString="connection string"/>
     </connectionStrings>
+
+    <appSettings>
+        <add key="FleetstarApiUsername" value=""/>
+        <add key="FleetstarApiPassword" value=""/>
+    </appSettings>
+
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+    </startup>
+
+    <applicationSettings>
+        <Escc.Gritting.Fleetstar.Properties.Settings>
+            <setting name="Escc_Gritting_Fleetstar_FleetstarAPIService_FleetstarAPIService"
+                serializeAs="String">
+                <value>URL of web service</value>
+            </setting>
+        </Escc.Gritting.Fleetstar.Properties.Settings>
+    </applicationSettings>
 </configuration>

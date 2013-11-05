@@ -43,7 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +62,10 @@
     <None Include="App.config.example" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Escc.Gritting.Fleetstar\Escc.Gritting.Fleetstar.csproj">
+      <Project>{F1684938-7300-42CF-AA92-471286F3E0EA}</Project>
+      <Name>Escc.Gritting.Fleetstar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Escc.Gritting\Escc.Gritting.csproj">
       <Project>{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}</Project>
       <Name>Escc.Gritting</Name>
