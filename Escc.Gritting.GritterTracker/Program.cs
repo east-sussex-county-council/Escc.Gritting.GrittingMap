@@ -15,7 +15,7 @@ namespace Escc.Gritting.GritterTracker
             UpdateGritterData(new FleetstarRepository(), new SqlServerGritterRepository());
         }
 
-        private static void UpdateGritterData(IGritterDataRepository fromRepository, IGritterDataRepository toRepository)
+        private static void UpdateGritterData(IGritterDataSource fromRepository, IGritterDataRepository toRepository)
         {
             if (fromRepository == null) throw new ArgumentNullException("fromRepository");
             if (toRepository == null) throw new ArgumentNullException("toRepository");
