@@ -1,6 +1,6 @@
 ﻿
 using System;
-using Escc.Gritting.Fakes;
+using Escc.Gritting.Fleetstar;
 using Escc.Gritting.SqlServer;
 
 namespace Escc.Gritting.GritterTracker
@@ -12,7 +12,7 @@ namespace Escc.Gritting.GritterTracker
     {
         static void Main()
         {
-            UpdateGritterData(new FakeGritterRepository(), new SqlServerGritterRepository());
+            UpdateGritterData(new FleetstarRepository(), new SqlServerGritterRepository());
         }
 
         private static void UpdateGritterData(IGritterDataRepository fromRepository, IGritterDataRepository toRepository)
