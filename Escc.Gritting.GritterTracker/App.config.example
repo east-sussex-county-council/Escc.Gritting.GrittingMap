@@ -13,6 +13,7 @@
     <appSettings>
         <add key="FleetstarApiUsername" value=""/>
         <add key="FleetstarApiPassword" value=""/>
+        <add key="FleetstarApiFleetId" value=""/>
     </appSettings>
 
     <startup>
