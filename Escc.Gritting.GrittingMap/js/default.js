@@ -12,7 +12,7 @@
                 cache: true,
                 success: function () {
                     map = esccGoogleMaps.createMap();
-                    esccGoogleMaps.addLocationSearch('google-location', 'google-search');
+                    esccGoogleMaps.addLocationSearch('google-location', 'google-search', map);
                     loadGritters();
                 }
             });
