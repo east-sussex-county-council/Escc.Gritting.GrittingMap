@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/default.css" /> 
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="fullScreenHeading">Where the gritters are</asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="fullScreenLinks"><p>Back to <a href="/roadsandtransport/roads/maintenance/saltingandgritting/default.htm">Gritting roads and pavements</a></p></asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="fullScreenLinks"><p>Back to <a href="/roadsandtransport/roads/maintenance/saltingandgritting/default.htm">Gritting roads and pavements</a></p>
+<p class="accessible"><a href="/roadsandtransport/roads/maintenance/saltingandgritting/disclaimer.htm">Gritting routes information &#8211; disclaimer</a></p></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="afterForm">
     <div class="map-controls" id="map-controls">
         <form>
