@@ -63,7 +63,6 @@
     <Content Include="Default.aspx" />
     <Content Include="img\gritter.png" />
     <Content Include="js\default.js" />
-    <Content Include="js\libs\markerwithlabel_packed.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
