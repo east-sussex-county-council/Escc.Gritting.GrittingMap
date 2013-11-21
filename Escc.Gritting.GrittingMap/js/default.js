@@ -12,7 +12,9 @@
                 cache: true,
                 success: function () {
                     map = esccGoogleMaps.createMap();
-                    clusterer = new MarkerClusterer(map);
+
+                    var clustererStyle = [{ url: 'img/gritters.png', height: 37, width: 67, textColor: '#ffffff', textSize: 12}];
+                    clusterer = new MarkerClusterer(map, [], { 'gridSize': 30, styles: clustererStyle });
                     esccGoogleMaps.addLocationSearch('google-location', 'google-search', map);
                     loadGritters();
                 }
