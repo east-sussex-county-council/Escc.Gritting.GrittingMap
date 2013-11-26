@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
 using Escc.Gritting.SqlServer;
 using EsccWebTeam.Data.Web;
 
@@ -16,24 +18,55 @@ namespace Escc.Gritting.GrittingMap
         public void ProcessRequest(HttpContext context)
         {
             var repo = new SqlServerGritterRepository();
+            var cache = new ApplicationCacheStrategy();
+            
+            var gritters = GetGritterData(repo, cache);
 
-            WriteResponseAsJson(context, repo);
+            WriteResponseAsJson(context, gritters);
+        }
+
+        /// <summary>
+        /// Gets the gritter data to return
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="cache"></param>
+        /// <returns></returns>
+        private static IEnumerable<Gritter> GetGritterData(IGritterDataRepository repo, ICacheStrategy cache)
+        {
+            if (cache != null)
+            {
+                var cachedGritters = cache.RetrieveGritters();
+                if (cachedGritters != null) return cachedGritters;
+            }
+
+            if (repo == null) throw new ArgumentNullException("repo");
+            
+            var gritters = repo.ReadAllGritters();
+            if (cache != null)
+            {
+                cache.CacheGritters(gritters, 60);
+            }
+
+            return gritters;
         }
 
         /// <summary>
         /// Writes the response as JSON.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <param name="repo">The repo.</param>
-        private static void WriteResponseAsJson(HttpContext context, IGritterDataRepository repo)
+        /// <param name="gritters">The gritters.</param>
+        private static void WriteResponseAsJson(HttpContext context, IEnumerable<Gritter> gritters)
         {
+            if (context == null) throw new ArgumentNullException("context");
+            if (gritters == null) throw new ArgumentNullException("gritters");
+
             context.Response.ContentType = "text/javascript";
             
             Http.CacheFor(0,1);
 
             context.Response.Write("[");
             var first = true;
-            foreach (var gritter in repo.ReadAllGritters())
+            foreach (var gritter in gritters)
             {
                 if (!first)
                 {

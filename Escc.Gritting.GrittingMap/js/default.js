@@ -30,7 +30,8 @@
                         markers[data[i].id] = new MarkerWithLabel({
                             icon: "img/gritter.png",
                             labelClass: "marker-label",
-                            labelContent: data[i].name
+                            labelContent: data[i].name,
+                            position: new google.maps.LatLng(data[i].lat, data[i].lng)
                         });
 
                         (function(gritter, marker) {
@@ -40,8 +41,9 @@
                         }(data[i], markers[data[i].id]));
                         
                         clusterer.addMarker(markers[data[i].id]);
+                    } else {
+                        markers[data[i].id].setPosition(new google.maps.LatLng(data[i].lat, data[i].lng));
                     }
-                    markers[data[i].id].setPosition(new google.maps.LatLng(data[i].lat, data[i].lng));
                 }
 
                 setTimeout(loadGritters, 60000);
