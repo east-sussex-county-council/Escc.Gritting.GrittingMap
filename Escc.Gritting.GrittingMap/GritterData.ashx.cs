@@ -37,7 +37,7 @@ namespace Escc.Gritting.GrittingMap
                 }
                 first = false;
 
-                context.Response.Write("{\"id\":\"" + gritter.GritterId + "\",\"name\":\"" + gritter.GritterName + "\",\"lat\":" + gritter.Latitude + ",\"lng\":" + gritter.Longitude + "}");
+                context.Response.Write("{\"id\":\"" + gritter.GritterId + "\",\"name\":\"" + gritter.GritterName + "\",\"lat\":" + gritter.Latitude + ",\"lng\":" + gritter.Longitude + ",\"status\":\"" + gritter.Status + "\"}");
             }
             context.Response.Write("]");
         }

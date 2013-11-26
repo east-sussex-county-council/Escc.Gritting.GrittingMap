@@ -2,7 +2,7 @@
 
     var esccGrittingMap = function () {
         /// <summary>Application to display the location of gritters on a map. This function forms the namespace.</summary>
-        var map, markers = {}, clusterer;
+        var map, markers = {}, clusterer, infoWindow = new google.maps.InfoWindow({});
 
         function setupApplication() {
             /// <summary>Set up the application and load the initial data</summary>
@@ -32,6 +32,13 @@
                             labelClass: "marker-label",
                             labelContent: data[i].name
                         });
+
+                        (function(gritter, marker) {
+                            google.maps.event.addListener(marker, 'click', function() {
+                                showGritterDetails(gritter, marker);
+                            });
+                        }(data[i], markers[data[i].id]));
+                        
                         clusterer.addMarker(markers[data[i].id]);
                     }
                     markers[data[i].id].setPosition(new google.maps.LatLng(data[i].lat, data[i].lng));
@@ -39,6 +46,11 @@
 
                 setTimeout(loadGritters, 10000);
             });
+        }
+        
+        function showGritterDetails(gritter, marker) {
+            infoWindow.setContent("<div class=\"text\"><h2>" + esccGoogleMaps.htmlEncode(gritter.name) + "</h2><p>" + esccGoogleMaps.htmlEncode(gritter.status) + "</p></div>");
+            infoWindow.open(map,marker);
         }
 
         setupApplication();

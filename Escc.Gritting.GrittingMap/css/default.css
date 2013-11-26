@@ -8,3 +8,7 @@
 
 /* Label style for gritter markers */
 .marker-label { font: bold 1em Arial, "Helvetica Neue", Helvetica, sans-serif; padding: 2px 5px; border: 2px solid #999; border-radius: 5px; text-align: center; white-space: nowrap; background: #fff; color: red; margin: 2px 0 0 -35px!important; }
+
+/* in InfoWindow */
+.gm-style-iw { min-width: 14em; }
+.gm-style-iw h2 { font-weight: bold;white-space: nowrap;}
