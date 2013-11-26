@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using Escc.Gritting.SqlServer;
+using EsccWebTeam.Data.Web;
 
 namespace Escc.Gritting.GrittingMap
 {
@@ -27,6 +28,9 @@ namespace Escc.Gritting.GrittingMap
         private static void WriteResponseAsJson(HttpContext context, IGritterDataRepository repo)
         {
             context.Response.ContentType = "text/javascript";
+            
+            Http.CacheFor(0,1);
+
             context.Response.Write("[");
             var first = true;
             foreach (var gritter in repo.ReadAllGritters())

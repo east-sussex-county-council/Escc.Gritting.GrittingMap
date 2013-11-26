@@ -17,6 +17,10 @@
     <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Solution files\eastsussex.gov.uk solutions\EsccWebTeam.Website.Solution\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +45,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EsccWebTeam.Data.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06fad7304560ae6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Inetpub\wwwroot\leisureandtourism\whatson\Bin\EsccWebTeam.Data.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -60,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
     <Content Include="Default.aspx" />
     <Content Include="img\gritter.png" />
     <Content Include="img\gritters.png" />

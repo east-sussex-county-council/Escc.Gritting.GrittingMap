@@ -44,7 +44,7 @@
                     markers[data[i].id].setPosition(new google.maps.LatLng(data[i].lat, data[i].lng));
                 }
 
-                setTimeout(loadGritters, 10000);
+                setTimeout(loadGritters, 60000);
             });
         }
         
