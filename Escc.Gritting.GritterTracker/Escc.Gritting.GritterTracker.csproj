@@ -14,7 +14,6 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -39,7 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ApplicationBlocks.ExceptionManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06fad7304560ae6f, processorArchitecture=MSIL">
@@ -65,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App.config.example" />
+    <None Include="App.example.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Escc.Gritting.Fleetstar\Escc.Gritting.Fleetstar.csproj">
@@ -73,7 +72,7 @@
       <Name>Escc.Gritting.Fleetstar</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Escc.Gritting\Escc.Gritting.csproj">
-      <Project>{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}</Project>
+      <Project>{edbbfb8e-2a83-4eb8-9a38-1f1326375a9d}</Project>
       <Name>Escc.Gritting</Name>
     </ProjectReference>
   </ItemGroup>

@@ -7,7 +7,7 @@
         function setupApplication() {
             /// <summary>Set up the application and load the initial data</summary>
             $.ajax({
-                url: "/js/googlemapsmarkerwithlabel-googlemapsmarkerclusterer-v1.jsx",
+                url: "/escc.eastsussexgovuk/js/googlemapsmarkerwithlabel-googlemapsmarkerclusterer-v1.jsx",
                 dataType: "script",
                 cache: true,
                 success: function () {
