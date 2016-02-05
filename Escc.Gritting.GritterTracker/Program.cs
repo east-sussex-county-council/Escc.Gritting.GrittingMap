@@ -2,7 +2,7 @@
 using System;
 using Escc.Gritting.Fleetstar;
 using Escc.Gritting.SqlServer;
-using Microsoft.ApplicationBlocks.ExceptionManagement;
+using Exceptionless;
 
 namespace Escc.Gritting.GritterTracker
 {
@@ -13,13 +13,15 @@ namespace Escc.Gritting.GritterTracker
     {
         static void Main()
         {
+            ExceptionlessClient.Current.Startup();
             try
             {
                 UpdateGritterData(new FleetstarRepository(), new SqlServerGritterRepository());
             }
             catch (Exception e)
             {
-                ExceptionManager.Publish(e);
+                e.ToExceptionless().Submit();
+                ExceptionlessClient.Current.ProcessQueue();
                 throw;
             }
         }
