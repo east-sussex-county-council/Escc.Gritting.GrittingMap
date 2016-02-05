@@ -43,6 +43,14 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Escc.Gritting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Escc.Gritting.1.0.0\lib\Escc.Gritting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Exceptionless, Version=1.5.2121.0, Culture=neutral, PublicKeyToken=fc181f0a46f65747, processorArchitecture=MSIL">
       <HintPath>..\packages\Exceptionless.1.5.2121\lib\net45\Exceptionless.dll</HintPath>
       <Private>True</Private>
@@ -68,17 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App.example.config" />
+    <None Include="App.example.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Escc.Gritting.Fleetstar\Escc.Gritting.Fleetstar.csproj">
       <Project>{F1684938-7300-42CF-AA92-471286F3E0EA}</Project>
       <Name>Escc.Gritting.Fleetstar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Escc.Gritting\Escc.Gritting.csproj">
-      <Project>{edbbfb8e-2a83-4eb8-9a38-1f1326375a9d}</Project>
-      <Name>Escc.Gritting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

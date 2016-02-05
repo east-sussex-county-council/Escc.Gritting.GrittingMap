@@ -16,8 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escc.Gritting", "..\Escc.Gritting\Escc.Gritting.csproj", "{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escc.Gritting.Fleetstar", "..\Escc.Gritting.Fleetstar\Escc.Gritting.Fleetstar.csproj", "{F1684938-7300-42CF-AA92-471286F3E0EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsccWebTeam.Data.Web", "..\Escc.Data.Web\EsccWebTeam.Data.Web.csproj", "{9C56D3DD-4952-4A1B-9AD6-907A1142872F}"
@@ -52,14 +50,6 @@ Global
 		{A690CCB0-3DAE-4646-969E-E5EBA186CF2D}.Release|Any CPU.ActiveCfg = Release|x86
 		{A690CCB0-3DAE-4646-969E-E5EBA186CF2D}.Release|x86.ActiveCfg = Release|x86
 		{A690CCB0-3DAE-4646-969E-E5EBA186CF2D}.Release|x86.Build.0 = Release|x86
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Debug|x86.Build.0 = Debug|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Release|x86.ActiveCfg = Release|Any CPU
-		{EDBBFB8E-2A83-4EB8-9A38-1F1326375A9D}.Release|x86.Build.0 = Release|Any CPU
 		{F1684938-7300-42CF-AA92-471286F3E0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1684938-7300-42CF-AA92-471286F3E0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1684938-7300-42CF-AA92-471286F3E0EA}.Debug|x86.ActiveCfg = Debug|Any CPU

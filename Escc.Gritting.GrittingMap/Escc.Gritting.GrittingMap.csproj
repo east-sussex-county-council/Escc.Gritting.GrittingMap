@@ -52,6 +52,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EcmaScript.NET, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\YUICompressor.NET.MSBuild.2.7.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
       <Private>True</Private>
@@ -62,6 +66,10 @@
     </Reference>
     <Reference Include="Escc.ClientDependencyFramework.WebForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06fad7304560ae6f, processorArchitecture=MSIL">
       <HintPath>..\packages\Escc.ClientDependencyFramework.WebForms.1.0.0\lib\Escc.ClientDependencyFramework.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Escc.Gritting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Escc.Gritting.1.0.0\lib\Escc.Gritting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Escc.Web.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06fad7304560ae6f, processorArchitecture=MSIL">
@@ -146,10 +154,6 @@
     <ProjectReference Include="..\..\Escc.EastSussexGovUK\Escc.EastSussexGovUK\EsccWebTeam.EastSussexGovUK.csproj">
       <Project>{1426fef0-23dc-4c23-ae15-67f2527bd741}</Project>
       <Name>EsccWebTeam.EastSussexGovUK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Escc.Gritting\Escc.Gritting.csproj">
-      <Project>{edbbfb8e-2a83-4eb8-9a38-1f1326375a9d}</Project>
-      <Name>Escc.Gritting</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
